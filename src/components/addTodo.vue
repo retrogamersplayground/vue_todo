@@ -31,9 +31,12 @@ export default {
   data() {
       return {
           todo: {
-              singleTodo: ''
+              singleTodo: '',
+              completeButton: '<button v-on:click.prevent="completed = !completed"  class="completeButton">Todo Completed</button>',
+              deleteButton: '<button v-on:click.prevent="remove" class="deleteButton">Delete Todo</button>'
           },
           submitted: false,
+          completed: false,
       }
   },
   methods: {
@@ -43,8 +46,7 @@ export default {
             this.submitted = true;
         });
     }
-  }
-    
+  } 
 }
 </script>
 
@@ -81,6 +83,6 @@ input {
     border-radius: 10px;
     font-size: 24px;
     margin-top: 20px;
-
 }
+
 </style>
